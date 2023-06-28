@@ -1,0 +1,21 @@
+- name: Update web servers
+  hosts: default
+  remote_user: vagrant
+
+  tasks:
+    - name: AptCacherNg Client
+      ansible.builtin.apt:
+        pkg:
+          - squid-deb-proxy-client
+          - auto-apt-proxy
+      become: true
+
+    # - name: Install packages
+    #   ansible.builtin.apt:
+    #     pkg:
+    #       - ansible
+    #       - lxde
+    #       - lxterminal
+    #       - lxsession
+    #   become: true
+    #   when: false
