@@ -19,6 +19,3 @@
     #       - lxsession
     #   become: true
     #   when: false
-
-# Test
-# echo 'Acquire::http::Proxy "http://192.168.121.1:3142";' | sudo tee /etc/apt/apt.conf
