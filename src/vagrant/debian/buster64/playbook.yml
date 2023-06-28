@@ -2,7 +2,7 @@
   hosts: default
   remote_user: vagrant
   vars:
-    aptcacherng_ip: "{{ansible_default_ipv4.gateway}}"  # 172.28.128.1
+    aptcacherng_ip: "{{ ansible_default_ipv4.gateway }}"  # 172.28.128.1
 
   tasks:
     - name: AptCacherNg Client
