@@ -1,0 +1,8 @@
+- name: AptCacherNg & GnomeShell minimal
+  hosts: default
+  remote_user: vagrant
+
+  roles:
+    - AptCacherNg/Client
+    # Test
+    # - Gnome/minimal

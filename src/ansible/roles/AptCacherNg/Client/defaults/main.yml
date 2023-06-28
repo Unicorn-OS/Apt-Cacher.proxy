@@ -1,4 +1,4 @@
+aptcacherng_ip: "{{ ansible_default_ipv4.gateway }}"
+
 # https://wiki.debian.org/AptCacherNg#Clients
 configuration: automatic
-squid_deb_proxy: true
-auto_apt_proxy: true

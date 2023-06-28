@@ -1,0 +1,25 @@
+# https://wiki.debian.org/AptCacherNg
+- name: AptCacherNg Client
+  ansible.builtin.apt:
+    pkg:
+      - squid-deb-proxy-client
+      - auto-apt-proxy
+  become: true
+  when: configuration == "automatic" and squid_deb_proxy  
+  notify:
+  - Fix, 403 CONNECT denied error
+  - Update cache
+
+
+- name: Apt.conf
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf
+    regexp: '^Acquire::http::Proxy'
+    line: 'Acquire::http::Proxy "http://{{ aptcacherng_ip }}:3142";'
+    create: true
+    mode: "0600"
+  when: ansible_user_id == 'vagrant' and ansible_virtualization_role == 'guest'
+  become: true
+  notify:
+  - Fix, 403 CONNECT denied error
+  - Update cache
