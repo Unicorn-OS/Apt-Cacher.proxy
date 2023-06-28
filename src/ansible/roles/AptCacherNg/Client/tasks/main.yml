@@ -5,13 +5,13 @@
       - squid-deb-proxy-client
       - auto-apt-proxy
   become: true
-  when: configuration == "automatic" and squid_deb_proxy  
+  when: configuration == "automatic"
   notify:
   - Fix, 403 CONNECT denied error
   - Update cache
 
 
-- name: Apt.conf
+- name: Apt.conf on Vagrant
   ansible.builtin.lineinfile:
     path: /etc/apt/apt.conf
     regexp: '^Acquire::http::Proxy'
@@ -23,3 +23,6 @@
   notify:
   - Fix, 403 CONNECT denied error
   - Update cache
+
+- name: Force flush handlers
+  ansible.builtin.meta: flush_handlers
