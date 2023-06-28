@@ -20,7 +20,7 @@
       become: true
 
     # Solution: https://forum.qubes-os.org/t/trouble-setting-up-apt-cacher-ng/12223
-    - name: Fix '403 CONNECT denied error'
+    - name: Fix - 403 CONNECT denied error
       ansible.builtin.shell: "{{ item }}"
       loop:
         - "sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list"
