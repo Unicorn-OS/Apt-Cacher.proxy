@@ -16,6 +16,7 @@
         regexp: '^Acquire::http::Proxy'
         line: Acquire::http::Proxy "http://172.28.128.1:3142";
         create: true
+        mode: "0600"
       become: true
 
 
