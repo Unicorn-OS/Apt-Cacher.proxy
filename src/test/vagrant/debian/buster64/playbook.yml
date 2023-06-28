@@ -10,6 +10,13 @@
           - auto-apt-proxy
       become: true
 
+    - name: Ensure SELinux is set to enforcing mode
+      ansible.builtin.lineinfile:
+        path: /etc/apt/apt.conf
+        regexp: '^Acquire::http::Proxy'
+        line: Acquire::http::Proxy "http://172.28.128.1:3142";
+
+
     # - name: Install packages
     #   ansible.builtin.apt:
     #     pkg:
