@@ -10,7 +10,7 @@
           - auto-apt-proxy
       become: true
 
-    - name: apt.conf
+    - name: Apt.conf
       ansible.builtin.lineinfile:
         path: /etc/apt/apt.conf
         regexp: '^Acquire::http::Proxy'
