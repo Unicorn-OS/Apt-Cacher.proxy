@@ -12,3 +12,9 @@
     - avahi-daemon
   become: true
   when: Avahi
+
+- name: Enable AptCacherNg
+  ansible.builtin.systemd:
+    name: apt-cacher-ng #.service
+    state: started
+    enabled: true
