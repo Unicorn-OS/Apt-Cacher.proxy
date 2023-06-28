@@ -1,14 +1,9 @@
 # Invalid response from proxy: HTTP/1.0 403 CONNECT denied
-works!:
-- box: debian/buster
-- vagrant:
->```
->config.vm.box = "debian/buster64"
->config.vm.network "private_network", type: "dhcp"
->```
+## works!:
+- vagrant: `box = "debian/buster64"`
 
-failed on:
-- box: generic/ubuntu2204
+## failed on:
+- vagrant: `box = "generic/ubuntu2204"`
 
 
 [sch:](https://www.google.com/search?q=403+connect+denied+(ask+the+admin+to+allow+https+tunnels))

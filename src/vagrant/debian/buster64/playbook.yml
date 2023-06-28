@@ -19,13 +19,10 @@
         mode: "0600"
       become: true
 
-
-    # - name: Install packages
-    #   ansible.builtin.apt:
-    #     pkg:
-    #       - ansible
-    #       - lxde
-    #       - lxterminal
-    #       - lxsession
-    #   become: true
-    #   when: false
+    # Solution: https://forum.qubes-os.org/t/trouble-setting-up-apt-cacher-ng/12223
+    - name: Fix '403 CONNECT denied error'
+      ansible.builtin.shell: "{{ item }}"
+      loop:
+        - "sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list"
+        - "sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list.d/*.list"
+      failed_when: false
