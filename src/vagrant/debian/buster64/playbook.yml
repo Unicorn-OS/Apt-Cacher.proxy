@@ -25,4 +25,5 @@
       loop:
         - "sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list"
         - "sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list.d/*.list"
+      become: true
       failed_when: false
