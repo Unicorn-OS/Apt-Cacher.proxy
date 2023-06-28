@@ -1,3 +1,8 @@
+# Allowed Hosts
+
+## Solution:
+https://kifarunix.com/how-to-setup-apt-caching-server-using-apt-cacher-ng-on-ubuntu-18-04/
+
 # AllowUserPorts: 80 443
 error: `403  Configuration error (confusing proxy mode) or prohibited port (see AllowUserPorts)`
 
