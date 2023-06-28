@@ -23,3 +23,12 @@ https://forum.qubes-os.org/t/trouble-setting-up-apt-cacher-ng/12223
 >sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list
 >sed -i 's#https://#http://HTTPS///#g' /etc/apt/sources.list.d/*.list
 >```
+
+
+# 503 errors - Found it! You have to run `apt update` Twice!
+Bug report: https://bugs.launchpad.net/ubuntu/+source/apt-cacher-ng/+bug/1960264
+
+## Solution:
+just run `apt update` twice
+
+[sch:](https://www.google.com/search?q=%22aptcacherng%22+%22HTTP+error%2C+code%3A+503%22)
