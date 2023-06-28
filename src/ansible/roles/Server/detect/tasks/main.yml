@@ -1,0 +1,7 @@
+- name: Debian based
+  ansible.builtin.include_role:
+    name: Server/AptCacherNg
+  when: ansible_os_family == "Debian"
+
+- debug:
+    msg: "{{ansible_os_family}}"

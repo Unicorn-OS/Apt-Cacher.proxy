@@ -1,0 +1,14 @@
+# https://wiki.debian.org/AptCacherNg
+
+- name: install AptCacherNg
+  ansible.builtin.apt:
+    pkg:
+    - apt-cacher-ng
+  become: true
+
+- name: install Avahi
+  ansible.builtin.apt:
+    pkg:
+    - avahi-daemon
+  become: true
+  when: Avahi
