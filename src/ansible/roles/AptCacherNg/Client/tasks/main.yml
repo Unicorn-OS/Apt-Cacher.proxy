@@ -4,6 +4,7 @@
     pkg:
       - squid-deb-proxy-client
       - auto-apt-proxy
+    update_cache: true
   become: true
   when: configuration == "automatic"
   notify:
