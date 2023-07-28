@@ -1,6 +1,6 @@
 # https://help.ubuntu.com/community/Apt-Cacher%20NG#Client_setup
 
-- name: Template a file to /etc/file.conf
+- name: Template apt.conf.d proxy
   ansible.builtin.template:
     src: proxy.j2
     dest: /etc/apt/apt.conf.d/proxy
