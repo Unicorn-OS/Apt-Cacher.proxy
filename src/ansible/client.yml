@@ -1,5 +1,6 @@
 - hosts: localhost #, fedora, ubuntu
   vars:
+    aptcacher_server: 10.0.1.4
     # Host_vars
     ansible_become_password: u
     ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
