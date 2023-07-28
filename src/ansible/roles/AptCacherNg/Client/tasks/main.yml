@@ -1,4 +1,5 @@
 # https://wiki.debian.org/AptCacherNg
+
 - name: AptCacherNg Client
   ansible.builtin.apt:
     pkg:
@@ -11,19 +12,9 @@
   - Fix, 403 CONNECT denied error
   - Update cache
 
+- include_tasks: backup.yml
 
-- name: Apt.conf on Vagrant
-  ansible.builtin.lineinfile:
-    path: /etc/apt/apt.conf
-    regexp: '^Acquire::http::Proxy'
-    line: 'Acquire::http::Proxy "http://{{ aptcacherng_ip }}:3142";'
-    create: true
-    mode: "0600"
-  when: ansible_user_id == 'vagrant' and ansible_virtualization_role == 'guest'
-  become: true
-  notify:
-  - Fix, 403 CONNECT denied error
-  - Update cache
+# - include_tasks: 'vagrant.yml'
 
 - name: Force flush handlers
   ansible.builtin.meta: flush_handlers

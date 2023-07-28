@@ -1,0 +1,16 @@
+- name: Create bac directory
+  ansible.builtin.file:
+    path: /etc/bac/apt
+    state: directory
+  become: true
+
+
+- name: Backup sources.list
+  ansible.builtin.copy:
+    src: /etc/apt/{{item}}
+    dest: /etc/bac/apt/{{item}}
+    remote_src: yes
+  become: true
+  loop:
+  - sources.list
+  - sources.list.d/
