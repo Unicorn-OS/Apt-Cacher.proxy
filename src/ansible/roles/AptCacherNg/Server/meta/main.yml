@@ -1,3 +1,2 @@
----
 dependencies:
-- Server/detect
+- AptCacherNg/Server/detect
