@@ -5,8 +5,10 @@
     line: 'Acquire::http::Proxy "http://{{ aptcacherng_ip }}:3142";'
     create: true
     mode: "0600"
-  when: ansible_user_id == 'vagrant' and ansible_virtualization_role == 'guest'
   become: true
   notify:
   - Fix, 403 CONNECT denied error
-  - Update cache
+  - apt update cache
+
+- name: Force flush handlers
+  ansible.builtin.meta: flush_handlers

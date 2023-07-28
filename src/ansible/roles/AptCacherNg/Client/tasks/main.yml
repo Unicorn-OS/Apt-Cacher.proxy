@@ -8,13 +8,7 @@
     update_cache: true
   become: true
   when: configuration == "automatic"
-  notify:
-  - Fix, 403 CONNECT denied error
-  - Update cache
 
-- include_tasks: backup.yml
+- include_tasks: backup-apt.yml
 
-# - include_tasks: 'vagrant.yml'
-
-- name: Force flush handlers
-  ansible.builtin.meta: flush_handlers
+- include_tasks: '{{ ansible_distribution }}/main.yml'
