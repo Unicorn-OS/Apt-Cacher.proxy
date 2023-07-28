@@ -1,2 +1,0 @@
-home_dir: "src/.uni/stor"
-depends: ["git@github.com:Unicorn-OS/pkg-cacher.git"]

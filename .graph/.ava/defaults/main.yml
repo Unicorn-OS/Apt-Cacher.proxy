@@ -1,0 +1,2 @@
+home_dir: "src/.uni/stor"
+depends: ["git@github.com:Unicorn-OS/Apt-cacher.git"]
