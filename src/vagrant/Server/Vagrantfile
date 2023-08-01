@@ -1,0 +1,34 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu-23.04"
+
+  # config.vm.network "private_network", type: "dhcp"
+
+  # Only NFS ver. 4 works!
+  # config.vm.synced_folder ".", "/vagrant",
+  #   type: "nfs",
+  #   nfs_version: 4,
+  #   nfs_udp: false
+
+  config.vm.provider :libvirt do |libvirt|
+  # Hardware
+    libvirt.cpus = 2
+    libvirt.memory = 4096
+    libvirt.memorybacking :access, :mode => "shared"
+
+  # Graphics
+    libvirt.graphics_port = 5901
+    libvirt.graphics_ip = '0.0.0.0'
+    libvirt.video_type = 'qxl'
+  end
+
+  # Macvtap
+  config.vm.define :test_vm1 do |test_vm1|
+    test_vm1.vm.network :public_network, :dev => "enp0s31f6", :mode => 'bridge'
+  end
+
+  # Ansible
+  config.vm.provision "ansible" do |ansible|
+    # ansible.verbose = "v"
+    ansible.playbook = "ansible/server.yml"
+  end
+end

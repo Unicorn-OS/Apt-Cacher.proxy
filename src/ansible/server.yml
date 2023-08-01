@@ -1,8 +1,10 @@
-- hosts: localhost #, fedora, ubuntu
-  vars:
-    # Host_vars
-    ansible_become_password: u
-    ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
+- name: AptCacherNg Server
+  hosts: localhost
 
+  # hosts: default
+  # remote_user: vagrant
+
+  vars:
+    ansible_become_password: u
   roles:
   - AptCacherNg/Server
