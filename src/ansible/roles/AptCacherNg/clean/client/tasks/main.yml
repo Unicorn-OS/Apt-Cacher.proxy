@@ -1,0 +1,15 @@
+- name: Remove Apt-Cacher-Ng
+  ansible.builtin.apt:
+    name: apt-cacher-ng
+    state: absent
+    purge: true
+  become: true
+
+- name: Delete Cache & Log directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+  - /var/cache/apt-cacher-ng
+  - /var/log/apt-cacher-ng
+  become: true
