@@ -11,7 +11,8 @@ https://github.com/vector-im/element-web/issues/3573
 >`PassThroughPattern: .*`
 
 --
-–https://bugs.launchpad.net/ubuntu/+source/apt-cacher-ng/+bug/1661199/comments/1
+https://bugs.launchpad.net/ubuntu/+source/apt-cacher-ng/+bug/1661199/comments/1
+
 ># Required for HTTPS outbound
 >PassThroughPattern: ^apt\.dockerproject\.org:443$
 >
