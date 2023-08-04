@@ -1,10 +1,16 @@
 - name: AptCacherNg Server
   hosts: localhost
-
-  # hosts: default
-  # remote_user: vagrant
-
-  vars:
-    ansible_become_password: u
+  tags: [ server ]
   roles:
   - AptCacherNg/Server
+
+
+- name: AptCacherNg Clean cache
+  hosts: localhost
+  tags: [ clean ]
+  roles:
+  - AptCacherNg/clean/server
+
+
+  # vars:
+  #   ansible_become_password: u
