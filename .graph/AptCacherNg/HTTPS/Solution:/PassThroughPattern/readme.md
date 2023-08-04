@@ -4,11 +4,6 @@ https://github.com/vector-im/element-web/issues/3573
 > `PassThroughPattern: riot\.im:443$`
 >
 >in /etc/apt-cacher-ng/acng.conf I can connect to https as well. Closing this issue.
---
-
->Or you can simply allow CONNECT for every https host:
->
->`PassThroughPattern: .*`
 
 --
 https://bugs.launchpad.net/ubuntu/+source/apt-cacher-ng/+bug/1661199/comments/1
