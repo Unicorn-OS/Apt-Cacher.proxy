@@ -1,0 +1,23 @@
+# use Delegate_facts to get Server ip_address
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_delegation.html#delegating-facts
+
+- name: Gather facts from Apt_cacher server
+  ansible.builtin.setup:
+  delegate_to: "{{ item }}"
+  delegate_facts: true
+  loop: "{{ groups['apt_cacher_server'] }}"
+  when: not ansible_user_id == "vagrant"
+
+# - debug:
+#     var: hostvars['apt_cacher_server0']['ansible_default_ipv4']['address']
+
+- ansible.builtin.set_fact:
+    aptcacher_server: "{{ hostvars['apt_cacher_server0']['ansible_default_ipv4']['address'] }}"
+  when: not ansible_user_id == "vagrant"
+
+- ansible.builtin.set_fact:
+    aptcacher_server: "{{ ansible_default_ipv4.gateway }}"
+  when: ansible_user_id == "vagrant" and ansible_virtualization_role == "guest"
+
+- debug:
+    msg: "{{ aptcacher_server }}"

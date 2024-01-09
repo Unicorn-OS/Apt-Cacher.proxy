@@ -9,6 +9,8 @@
   become: true
   when: configuration == "automatic"
 
-- include_tasks: backup-apt.yml
+# - include_tasks: backup-apt.yml
+
+- include_tasks: getServer.yml
 
 - include_tasks: '{{ ansible_distribution }}/main.yml'

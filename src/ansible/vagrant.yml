@@ -1,4 +1,4 @@
-- name: AptCacherNg & GnomeShell minimal
+- name: AptCacherNg in Vagrant
   hosts: default
   remote_user: vagrant
 
