@@ -1,2 +1,2 @@
 cd src
-podman build --tag uni/aptcacherng .
+podman build --tag uni/apt-cacher-ng .
