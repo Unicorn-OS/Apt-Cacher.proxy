@@ -1,26 +1,11 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu2304" #ubuntu2310
-  
+
   config.vm.define "apt-cacher.test"
 
-  # config.vm.network "private_network", type: "dhcp"
-
-  # Only NFS ver. 4 works!
-  # config.vm.synced_folder ".", "/vagrant",
-  #   type: "nfs",
-  #   nfs_version: 4,
-  #   nfs_udp: false
-
-  config.vm.provider :libvirt do |libvirt|
-    libvirt.default_prefix = ""
-    libvirt.graphics_type = "spice"
-    libvirt.video_type = 'qxl'
-  end
-
-
   # Ansible
-  # config.vm.provision "ansible" do |ansible|
-  #   ansible.verbose = "v"
-  #   ansible.playbook = "playbook.yml"
-  # end
+  config.vm.provision "ansible" do |ansible|
+    ansible.verbose = "v"
+    ansible.playbook = "ansible/vagrant.yml"
+  end
 end
