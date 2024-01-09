@@ -3,3 +3,4 @@
     path: /etc/apt/sources.list
     regexp: "https"
     replace: "http"
+  become: true
