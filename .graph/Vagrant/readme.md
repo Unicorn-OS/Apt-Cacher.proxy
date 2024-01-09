@@ -16,9 +16,17 @@ When running AptCacher on localhost and using Vagrant-libvirt's default networki
 - generic/debian11
 
 # Ubuntu
-## /etc/apt Bug:
+## Problem: /etc/apt/sources.list 'https'
 There are differences between the /etc/apt in a Default iso install and the vagrant images, that causes apt-cacher proxy to break! Test: I copied /etc/apt from a known good VM into a running vagrant and it worked.
 
 affects:
 - generic/ubuntu2204
 
+### Cause
+This error is caused by vagrant boxes having all 'https' in /etc/apt/sources.list.
+
+### Solution
+Replace https with http:
+```
+sudo sed -i 's/https/http/' /etc/apt/sources.list
+```

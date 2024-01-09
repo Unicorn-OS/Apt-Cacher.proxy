@@ -1,8 +1,7 @@
-- name: AptCacherNg in Vagrant
+- name: Vagrant client
   hosts: default
   remote_user: vagrant
 
   roles:
+    - is Vagrant
     - AptCacherNg/Client
-    # Test
-    # - Gnome/minimal
