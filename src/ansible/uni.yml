@@ -1,11 +1,7 @@
-- hosts: localhost #, fedora, ubuntu
-  vars:
-    foo: "bar"
-  vars_files:
-    - vars/Env.yml
-    - vars/debug.yml
+# - hosts: apt_cacher_server
+#   roles:
+#   - AptCacherNg/Server
+
+- hosts: apt_cacher_client #, localhost
   roles:
-  - in Distrobox
-  - App
-  - .test Functions
-  - .test/start
+  - AptCacherNg/Client

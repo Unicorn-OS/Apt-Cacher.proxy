@@ -11,13 +11,22 @@
 # - debug:
 #     var: hostvars['apt_cacher_server0']['ansible_default_ipv4']['address']
 
-- ansible.builtin.set_fact:
+- name: Default node on lan (bare metal or virtual)
+  ansible.builtin.set_fact:
     aptcacher_server: "{{ hostvars['apt_cacher_server0']['ansible_default_ipv4']['address'] }}"
   when: not ansible_user_id == "vagrant"
 
-- ansible.builtin.set_fact:
+- name: Vagrant host
+  ansible.builtin.set_fact:
     aptcacher_server: "{{ ansible_default_ipv4.gateway }}"
   when: ansible_user_id == "vagrant" and ansible_virtualization_role == "guest"
 
-- debug:
-    msg: "{{ aptcacher_server }}"
+- name: Custom Libvirt host
+  ansible.builtin.set_fact:
+    aptcacher_server: "{{ ansible_default_ipv4.gateway }}"
+  when: ansible_default_ipv4.gateway == "192.168.122.1" and ansible_virtualization_role == "guest"
+
+# - debug:
+#     msg: "{{ aptcacher_server }}"
+
+# - meta: end_play
