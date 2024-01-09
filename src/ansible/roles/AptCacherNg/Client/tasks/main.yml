@@ -1,13 +1,13 @@
 # https://wiki.debian.org/AptCacherNg
 
-- name: AptCacherNg Client
-  ansible.builtin.apt:
-    pkg:
-      - squid-deb-proxy-client
-      - auto-apt-proxy
-    update_cache: true
-  become: true
-  when: configuration == "automatic"
+# - name: AptCacherNg Client
+#   ansible.builtin.apt:
+#     pkg:
+#       - squid-deb-proxy-client
+#       - auto-apt-proxy
+#     update_cache: true
+#   become: true
+#   when: configuration == "automatic"
 
 # - include_tasks: backup-apt.yml
 
