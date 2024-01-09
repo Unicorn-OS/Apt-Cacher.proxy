@@ -15,7 +15,10 @@ When running AptCacher on localhost and using Vagrant-libvirt's default networki
 - debian/buster64
 - generic/debian11
 
-## Doesn't work:
+# Ubuntu
+## /etc/apt Bug:
+There are differences between the /etc/apt in a Default iso install and the vagrant images, that causes apt-cacher proxy to break! Test: I copied /etc/apt from a known good VM into a running vagrant and it worked.
+
+affects:
 - generic/ubuntu2204
 
-Unknown bug! I can't figure out why?
