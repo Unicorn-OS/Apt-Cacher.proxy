@@ -1,0 +1,18 @@
+localhost   ansible_become_password=u   ansible_connection=local
+
+
+[apt_cacher_client]
+192.168.1.102
+
+[apt_cacher_client:vars]
+ansible_become_password=u
+ansible_user=me
+ansible_password=u
+
+
+[apt_cacher_server]
+apt_cacher_server0 ansible_host=localhost
+
+[apt_cacher_server:vars]
+ansible_connection=local
+ansible_become_password=u

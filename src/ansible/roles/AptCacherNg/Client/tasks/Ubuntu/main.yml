@@ -1,3 +1,19 @@
+# use Delegate_facts to get Server ip_address
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_delegation.html#delegating-facts
+
+- name: Gather facts from Apt_cacher server
+  ansible.builtin.setup:
+  delegate_to: "{{ item }}"
+  delegate_facts: true
+  loop: "{{ groups['apt_cacher_server'] }}"
+
+# - debug:
+#     var: hostvars['apt_cacher_server0']['ansible_default_ipv4']['address']
+
+- ansible.builtin.set_fact:
+    aptcacher_server: "{{ hostvars['apt_cacher_server0']['ansible_default_ipv4']['address'] }}"
+
+
 # https://help.ubuntu.com/community/Apt-Cacher%20NG#Client_setup
 
 - name: Template apt.conf.d proxy
