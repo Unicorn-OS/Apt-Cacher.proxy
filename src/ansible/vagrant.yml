@@ -1,5 +1,5 @@
 - name: Vagrant client
-  hosts: default
+  hosts: default #, apt-cacher.test
   remote_user: vagrant
 
   roles:

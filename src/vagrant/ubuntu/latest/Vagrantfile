@@ -1,7 +1,13 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu2304" #ubuntu2310
 
-  config.vm.define "apt-cacher.test"
+  # config.vm.define "apt-cacher.test"
+
+  config.vm.provider :libvirt do |libvirt|
+    # libvirt.default_prefix = ""
+    libvirt.graphics_type = "spice"
+    libvirt.video_type = 'qxl'
+  end
 
   # Ansible
   config.vm.provision "ansible" do |ansible|
