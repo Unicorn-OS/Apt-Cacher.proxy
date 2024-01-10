@@ -25,8 +25,3 @@
   ansible.builtin.set_fact:
     aptcacher_server: "{{ ansible_default_ipv4.gateway }}"
   when: ansible_default_ipv4.gateway == "192.168.122.1" and ansible_virtualization_role == "guest"
-
-# - debug:
-#     msg: "{{ aptcacher_server }}"
-
-# - meta: end_play

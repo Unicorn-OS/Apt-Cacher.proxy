@@ -1,7 +1,7 @@
 - name: Vagrant client
-  hosts: default #, apt-cacher.test
+  hosts: all #default #, apt-cacher.test
   remote_user: vagrant
 
   roles:
-    - is Vagrant
+    - fix/Vagrant
     - AptCacherNg/Client

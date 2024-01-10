@@ -1,0 +1,5 @@
+container_home: "{{ ansible_env.HOME }}/.uni/container/apt-cacher-ng"
+
+container_name: apt-cacher-ng.server
+
+data_dir: "{{ ansible_env.HOME }}/.uni/data/apt-cacher-ng"
