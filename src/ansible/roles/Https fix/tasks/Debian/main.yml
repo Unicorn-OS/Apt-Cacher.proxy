@@ -1,0 +1,6 @@
+- name: in Apt/sources.list Replace https with http
+  ansible.builtin.replace:
+    path: /etc/apt/sources.list
+    regexp: "https"
+    replace: "http"
+  become: true
