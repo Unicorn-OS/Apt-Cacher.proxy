@@ -1,0 +1,2 @@
+- include_tasks: vagrant.yml
+  when: ansible_user_id == 'vagrant' and ansible_virtualization_role == 'guest'

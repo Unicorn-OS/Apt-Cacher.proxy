@@ -1,5 +1,2 @@
-- include_tasks: backup-apt.yml
-  when: backup
-
 - name: OS specific
   include_tasks: "{{ ansible_distribution }}/main.yml"
