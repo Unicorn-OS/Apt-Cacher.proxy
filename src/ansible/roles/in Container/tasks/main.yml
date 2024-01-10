@@ -18,6 +18,9 @@
     name: "{{ container_name }}"
     image: "{{ container_name }}"
     state: started
+    ports:
+        - "3142:3142"
+    volume: "{{ data_dir }}:/var/cache/apt-cacher-ng"
 
 # Run on all interfaces:
 #podman run -d -p 3142:3142 -v ~/.uni/data/apt-cacher-ng:/var/cache/apt-cacher-ng --name apt-cacher-ng apt-cacher-ng.server
