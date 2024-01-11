@@ -1,5 +1,11 @@
 # from: https://github.com/razinj/docker-custom-apt-cacher-ng
 
+- name: Create data directory
+  ansible.builtin.file:
+    path: "{{ cache_data_dir }}"
+    state: directory
+    mode: '0755'
+
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
     src: Containerfile
@@ -20,7 +26,7 @@
     state: started
     ports:
         - "3142:3142"
-    volume: "{{ data_dir }}:/var/cache/apt-cacher-ng"
+    volume: "{{ cache_data_dir }}:/var/cache/apt-cacher-ng"
 
 # Run on all interfaces:
 #podman run -d -p 3142:3142 -v ~/.uni/data/apt-cacher-ng:/var/cache/apt-cacher-ng --name apt-cacher-ng apt-cacher-ng.server
