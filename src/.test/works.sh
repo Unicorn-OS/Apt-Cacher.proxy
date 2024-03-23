@@ -1,13 +1,19 @@
 cd ..
 
-in_container_server(){
+ubuntu_version=23.10
+
+_tested_works(){
+  ubuntu_version=22.04
+  ubuntu_version=23.10
+}
+
+container_server(){
   cd ansible
   ansible-playbook in\ container.yml
   cd -
 }
 
 vagrant_client(){
-  ubuntu_version=22.04
   cd vagrant/Ubuntu/$ubuntu_version/
   ./ln.sh
   vagrant up
@@ -19,7 +25,7 @@ list_cache(){
 }
 
 main(){
-  in_container_server
+  container_server
   vagrant_client
   sleep 5
   list_cache
