@@ -1,0 +1,5 @@
+# from galaxy
+- name: Synchronicity1111.AptCacherNg_Server_inContainer
+
+#- name: AptCacherNg_Server_inContainer
+#  src: https://github.com/Unicorn-OS/ansible-role-AptCacherNg_Server_inContainer
