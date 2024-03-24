@@ -1,3 +1,0 @@
-- hosts: localhost
-  roles:
-  - AptCacherNg.Server.in_container
