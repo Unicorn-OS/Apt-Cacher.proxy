@@ -2,5 +2,5 @@
   hosts: all #default #, apt-cacher.test
   remote_user: vagrant
   roles:
-    - Synchronicity1111.AptCacherNg-fix-Vagrant
-    - Synchronicity1111.AptCacherNg-Client
+    - UniInc.AptCacherNg-fix-Vagrant
+    - UniInc.AptCacherNg-Client
