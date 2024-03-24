@@ -1,7 +1,6 @@
 - name: Vagrant client
   hosts: all #default #, apt-cacher.test
   remote_user: vagrant
-
   roles:
-    - fix-Vagrant-aptcacherng
-    - AptCacherNg-Client
+    - Synchronicity1111.AptCacherNg-fix-Vagrant
+    - Synchronicity1111.AptCacherNg-Client

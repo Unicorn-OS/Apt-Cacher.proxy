@@ -1,8 +1,0 @@
-- hosts: apt_cacher_server
-  roles:
-  - AptCacherNg/Server
-
-- hosts: apt_cacher_client #, localhost
-  roles:
-  - is Vagrant
-  - AptCacherNg/Client

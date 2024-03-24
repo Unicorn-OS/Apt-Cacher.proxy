@@ -1,6 +1,0 @@
----
-- name: prerequisite
-  become: true
-  ansible.builtin.dnf:
-    name: dnf-plugins-core
-    state: latest

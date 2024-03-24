@@ -1,4 +1,0 @@
-- include_tasks: getServer.yml
-
-- name: OS specific
-  include_tasks: "{{ ansible_os_family }}/main.yml"

@@ -1,0 +1,3 @@
+- hosts: apt_cacher_server
+  roles:
+  - AptCacherNg-Server
