@@ -1,7 +1,0 @@
-# from galaxy
-- name: UniInc.AptCacherNg-Server-inContainer
-
-- name: UniInc.AptCacherNg-fix-Vagrant
-
-- name: UniInc.AptCacherNg-Client
-

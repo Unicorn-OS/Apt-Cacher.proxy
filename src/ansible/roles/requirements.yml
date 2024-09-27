@@ -1,0 +1,6 @@
+---
+roles:
+- UniInc.AptCacherNg-Server-inContainer
+- UniInc.AptCacherNg-fix-Vagrant
+- UniInc.AptCacherNg-Client
+
