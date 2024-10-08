@@ -1,3 +1,0 @@
-- hosts: apt_cache #, localhost
-  roles:
-  - UniInc.AptCacherNg-Server-inContainer

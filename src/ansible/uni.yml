@@ -1,3 +1,8 @@
-- hosts: node #localhost, apt_cacher_client
+- hosts: apt_cache_server #, localhost
+  roles:
+  - UniInc.AptCacherNg-Server-inContainer
+
+
+- hosts: node #, apt_cacher_client #, localhost
   roles:
   - UniInc.AptCacherNg-Client
