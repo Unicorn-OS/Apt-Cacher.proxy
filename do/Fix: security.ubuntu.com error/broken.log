@@ -1,0 +1,11 @@
+fn: 'me@test:~$ sudo apt update', error:
+"""
+Err:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+  500  Remote or cache error [IP: 192.168.122.243 3142]
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+30 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/noble-security/InRelease  500  Remote or cache error [IP: 192.168.122.243 3142]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+"""

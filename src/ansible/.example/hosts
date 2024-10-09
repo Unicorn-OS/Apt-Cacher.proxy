@@ -1,0 +1,16 @@
+localhost ansible_connection=local ansible_become_password=u
+
+[apt_cache_server]
+192.168.122.243
+
+[apt_cache_server:vars]
+ansible_become_password=u
+
+[node]
+192.168.122.243
+
+[node:vars]
+ansible_become_password=u
+
+[apt_cache_client:children]
+node

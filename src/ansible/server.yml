@@ -1,0 +1,4 @@
+- hosts: apt_cache_server #, localhost
+  roles:
+  #- UniInc.AptCacherNg-Server-inContainer
+  - ansible-role-AptCacherNg-Server-inContainer
